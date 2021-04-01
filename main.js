@@ -13,8 +13,8 @@ const doDecrease = () => item.innerText--;
 const doReset = () => item.innerText = 0;
 const doIncrease = () => item.innerText++;
 
-const changeClass = () => {
-	if (item.innerText > 0) {
+const changeClass = (e) => {
+	if (e.target === "") {
 		item.setAttribute("positive");
 	}
 
