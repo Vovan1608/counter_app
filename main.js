@@ -4,6 +4,7 @@ const getElement = (selector) => document.querySelector(selector);
 
 const app = getElement("#app");
 const item = getElement(".item");
+
 const decrease = getElement(".decrease");
 const reset = getElement(".reset");
 const increase = getElement(".increase");
@@ -16,7 +17,7 @@ const changeClass = () => {
 	if (item.innerText > 0) {
 		item.setAttribute("positive");
 	}
- 
+
 	if (item.innerText < 0) {
 		item.setAttribute("class", "negative")
 	}
