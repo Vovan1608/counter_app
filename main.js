@@ -5,25 +5,30 @@ const getElement = (selector) => document.querySelector(selector);
 const app = getElement("#app");
 const item = getElement(".item");
 
-// const decrease = getElement(".decrease");
-// const reset = getElement(".reset");
-// const increase = getElement(".increase");
+let count = 0;
 
-// const doDecrease = () => item.innerText--;
-// const doReset = () => item.innerText = 0;
-// const doIncrease = () => item.innerText++;
-
-const changeClass = (e) => {
+const change = (e) => {
 	if (e.target.className === "decrease") {
-		item.innerText--;
+		count--;
 	}
 	if (e.target.className === "increase") {
-		item.innerText++;
+		count++;
+	}
+	if (e.target.className === "reset") {
+		count = 0;
+	}
+	
+	item.innerText = count;
+
+	if (count > 0) {
+		item.style.color = "#3feb14";
+	}
+	if (count < 0) {
+		item.style.color = "#e40909";
+	}
+	if (count === 0) {
+		item.style.color = "#222";
 	}
 }
 
-// decrease.addEventListener("click", doDecrease);
-// reset.addEventListener("click", doReset);
-// increase.addEventListener("click", doIncrease);
-
-app.addEventListener("click", changeClass);
+app.addEventListener("click", change);
