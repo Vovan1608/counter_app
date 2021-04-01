@@ -1,12 +1,26 @@
-.app {
+body {
+  background-color: #61dafb;
+}
+
+#app {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #f1f5f8;
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
 }
 
 .header {
-  margin: 0 auto;
   font-size: 50px;
   color: #000;
+}
+
+.item {
+  font-size: 150px;
+  margin: 50px;
+}
+
+button {
+  width: 10%;
 }
